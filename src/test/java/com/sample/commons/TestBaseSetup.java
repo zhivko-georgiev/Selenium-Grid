@@ -58,7 +58,7 @@ public class TestBaseSetup {
 	private static WebDriver initRemoteDriver(String appURL,
 			DesiredCapabilities desiredCapabilities, String remoteAddress)
 			throws MalformedURLException {
-		System.out.println("Launching RemoteDriver browser..");
+		System.out.println("Launching " + desiredCapabilities.getBrowserName() + " browser..");
 
 		WebDriver driver = new RemoteWebDriver(new URL(remoteAddress),
 				desiredCapabilities);
