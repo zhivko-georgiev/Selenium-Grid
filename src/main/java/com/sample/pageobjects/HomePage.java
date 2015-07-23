@@ -20,7 +20,11 @@ public class HomePage extends BasePageObject {
 	}
 
 	public LoginPage clickLoginButton() {
-		waitForElementToBeDisplayed(loginButton);
+		while (!loginButton.isDisplayed()) {
+			getDriver().navigate().refresh();
+			waitForElementToBeDisplayed(loginButton);
+		}
+		
 		loginButton.click();
 
 		return PageFactory.initElements(getDriver(), LoginPage.class);
